@@ -23,7 +23,6 @@ public class Homem extends Calculo {
 
 	@Override
 	public Double total() {
-
 		if (getCalculohomem() == 1) {
 			return (66 + (13.7 * getPeso()) + (5 * getAltura()) - (6.8 * getIdade())) * 1.2;
 		} 

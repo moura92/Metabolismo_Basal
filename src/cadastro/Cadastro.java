@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 import calculo.Calculo;
 import calculo.Homem;
+import calculo.Mulher;
 
 public class Cadastro {
 
@@ -20,15 +21,14 @@ public class Cadastro {
 
 		List<Calculo> lista = new ArrayList<>();
 
-		Calculo calc = new Calculo();
-
-		System.out.print("Quantas pessoas ? ");
+		System.out.println("------ CALCULADORA DE TAXA METABOLISMO BASAL (TMB) ------");
+		System.out.println();
+		System.out.print("Digite a quantidade de pessoas: ");
 		int quantidade = sc.nextInt();
 
-		sc.nextLine();
 		for (int i = 0; i < quantidade; i++) {
 			System.out.printf("Digite o %dª nome: ", i + 1);
-			String nome = sc.nextLine();
+			String nome = sc.next();
 			System.out.print("Digite o Genero ( m / f ): ");
 			char genero = sc.next().charAt(0);
 			System.out.print("Digite o peso (Kg): ");
@@ -40,41 +40,25 @@ public class Cadastro {
 			System.out.println();
 
 			if (genero == 'm') {
-				System.out.println(calc.toString1());
+				System.out.println(new Calculo().toString1());
 				System.out.print("Escolha um numero: ");
 				Double calculohomem = sc.nextDouble();
-
+				System.out.println();
 				Calculo calculo = new Homem(nome, genero, peso, altura, idade, calculohomem);
 				lista.add(calculo);
-
+			} else if (genero == 'f') {
+				System.out.println(new Calculo().toString1());
+				System.out.print("Ecolha um numero: ");
+				Double calculomulher = sc.nextDouble();
+				System.out.println();
+				lista.add(new Mulher(nome, genero, peso, altura, idade, calculomulher));
 			}
 		}
+		System.out.println("Resultado:");
 		for (Calculo x : lista) {
 			System.out.println(x.toString());
 		}
-		/*
-		 * System.out.printf("Taxa de metabolismo Basal de %s: %.2f Kcal%n", nome[i],
-		 * fator1); System.out.println(); } else if (genero[i] == 'f') { tbmmulher = 655
-		 * + (9.6 * peso[i]) + (1.8 * altura[i]) - (4.7 * idade[i]);
-		 * System.out.println(); System.out.println("Nivel de Atividade fisica:");
-		 * System.out.println("1 - Sedentários (pouco ou nenhum exercício);");
-		 * System.out.
-		 * println("2 - Levemente ativo (exercício leve 1 a 3 dias por semana);");
-		 * System.out.
-		 * println("3 - Moderadamente ativo (exercício moderado, faz esportes 3 a 5 dias por semana);"
-		 * ); System.out.
-		 * println("4 - Altamente ativo (exercício pesado de 5 a 6 dias por semana);");
-		 * System.out.
-		 * println("5 - Extremamente ativo (exercício pesado diariamente e até 2 vezes por dia)"
-		 * ); System.out.println(); System.out.print("Escolha um numero: "); numero =
-		 * sc.nextInt(); } if (genero[i] == 'f') { if (numero == 1) { fator2 = tbmmulher
-		 * * 1.2; } else if (numero == 2) { fator2 = tbmmulher * 1.375; } else if
-		 * (numero == 3) { fator2 = tbmmulher * 1.55; } else if (numero == 4) { fator2 =
-		 * tbmmulher * 1.725; } else if (numero == 5) { fator2 = tbmmulher * 1.9;
-		 * 
-		 * } System.out.printf("Taxa de metabolismo Basal de %s: %.2f Kcal%n", nome[i],
-		 * fator2); } } System.out.println();
-		 */
+
 		System.out.println();
 		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm ").withZone(ZoneId.systemDefault());
 		// Quando for instanciar uma data com "INSTANT" utiliza - se

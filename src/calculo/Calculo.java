@@ -8,7 +8,6 @@ public class Calculo {
 	private Double altura;
 	private Integer idade;
 	
-
 		public Calculo() {
 		super();
 	}
@@ -72,11 +71,11 @@ public class Calculo {
 				+ "2 - Levemente ativo (exercício leve 1 a 3 dias por semana);\n"
 				+ "3 - Moderadamente ativo (exercício moderado, faz esportes 3 a 5 dias por semana);\n"
 				+ "4 - Altamente ativo (exercício pesado de 5 a 6 dias por semana);\n"
-				+ "5 - Extremamente ativo (exercício pesado diariamente e até 2 vezes por dia)\n";
+				+ "5 - Extremamente ativo (exercício pesado diariamente e até 2 vezes por dia)";
 	}
 
 	public String toString() {
-		return "Nome: " 
+		return "Nome " 
 				+ nome + " - " 
 				+ String.format("%.2f", total()) 
 				+ " Kcal";

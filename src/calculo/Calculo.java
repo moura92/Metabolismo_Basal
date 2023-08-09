@@ -7,22 +7,21 @@ public class Calculo {
 	private Integer peso;
 	private Double altura;
 	private Integer idade;
-	private Integer fator;
+	
 
-	public Calculo(String nome, char genero, Integer peso, Double altura, Integer idade, Integer fator) {
+		public Calculo() {
+		super();
+	}
+	
+	public Calculo(String nome, char genero, Integer peso, Double altura, Integer idade) {
 		super();
 		this.nome = nome;
 		this.genero = genero;
 		this.peso = peso;
 		this.altura = altura;
 		this.idade = idade;
-		this.fator = fator;
 	}
-
-	public Calculo() {
-		super();
-	}
-
+	
 	public String getNome() {
 		return nome;
 	}
@@ -63,19 +62,8 @@ public class Calculo {
 		this.idade = idade;
 	}
 
-	public Double calculohomem() {
-
-		if (fator == 1) {
-			return (66 + (13.8 * peso) + (5 * altura) - (6.8 * idade)) * 1.2;
-		} else if (fator == 2) {
-			return (66 + (13.8 * peso) + (5 * altura) - (6.8 * idade)) * 1.375;
-		} else if (fator == 3) {
-			return (66 + (13.8 * peso) + (5 * altura) - (6.8 * idade)) * 1.55;
-		} else if (fator == 4) {
-			return (66 + (13.8 * peso) + (5 * altura) - (6.8 * idade)) * 1.725;
-		} else if (fator == 5) {
-			return (66 + (13.8 * peso) + (5 * altura) - (6.8 * idade)) * 1.9;
-		}
+	public Double total() {
+		
 		return null;
 	}
 
@@ -90,7 +78,7 @@ public class Calculo {
 	public String toString() {
 		return "Nome: " 
 				+ nome + " - " 
-				+ String.format("%.2f", calculohomem()) 
+				+ String.format("%.2f", total()) 
 				+ " Kcal";
 	}
 }

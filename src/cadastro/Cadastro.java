@@ -9,6 +9,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import calculo.Calculo;
+import calculo.Homem;
 
 public class Cadastro {
 
@@ -41,48 +42,46 @@ public class Cadastro {
 			if (genero == 'm') {
 				System.out.println(calc.toString1());
 				System.out.print("Escolha um numero: ");
-				Integer fator = sc.nextInt();
+				Double calculohomem = sc.nextDouble();
 
-				Calculo calculo = new Calculo(nome, genero, peso, altura, idade, fator);
+				Calculo calculo = new Homem(nome, genero, peso, altura, idade, calculohomem);
 				lista.add(calculo);
+
 			}
 		}
-			for (Calculo listas : lista) {
-				System.out.println(listas.toString());
-			}
-			/*
-			 * System.out.printf("Taxa de metabolismo Basal de %s: %.2f Kcal%n", nome[i],
-			 * fator1); System.out.println(); } else if (genero[i] == 'f') { tbmmulher = 655
-			 * + (9.6 * peso[i]) + (1.8 * altura[i]) - (4.7 * idade[i]);
-			 * System.out.println(); System.out.println("Nivel de Atividade fisica:");
-			 * System.out.println("1 - Sedentários (pouco ou nenhum exercício);");
-			 * System.out.
-			 * println("2 - Levemente ativo (exercício leve 1 a 3 dias por semana);");
-			 * System.out.
-			 * println("3 - Moderadamente ativo (exercício moderado, faz esportes 3 a 5 dias por semana);"
-			 * ); System.out.
-			 * println("4 - Altamente ativo (exercício pesado de 5 a 6 dias por semana);");
-			 * System.out.
-			 * println("5 - Extremamente ativo (exercício pesado diariamente e até 2 vezes por dia)"
-			 * ); System.out.println(); System.out.print("Escolha um numero: "); numero =
-			 * sc.nextInt(); } if (genero[i] == 'f') { if (numero == 1) { fator2 = tbmmulher
-			 * * 1.2; } else if (numero == 2) { fator2 = tbmmulher * 1.375; } else if
-			 * (numero == 3) { fator2 = tbmmulher * 1.55; } else if (numero == 4) { fator2 =
-			 * tbmmulher * 1.725; } else if (numero == 5) { fator2 = tbmmulher * 1.9;
-			 * 
-			 * } System.out.printf("Taxa de metabolismo Basal de %s: %.2f Kcal%n", nome[i],
-			 * fator2); } } System.out.println();
-			 */
-			System.out.println();
-			DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm ")
-					.withZone(ZoneId.systemDefault());
-			// Quando for instanciar uma data com "INSTANT" utiliza - se
-			// ".withZone(ZoneId.systemDefault()"
-			Instant hora = Instant.now();
-			System.out.println("Data da Consulta: " + formato.format(hora));
+		for (Calculo x : lista) {
+			System.out.println(x.toString());
+		}
+		/*
+		 * System.out.printf("Taxa de metabolismo Basal de %s: %.2f Kcal%n", nome[i],
+		 * fator1); System.out.println(); } else if (genero[i] == 'f') { tbmmulher = 655
+		 * + (9.6 * peso[i]) + (1.8 * altura[i]) - (4.7 * idade[i]);
+		 * System.out.println(); System.out.println("Nivel de Atividade fisica:");
+		 * System.out.println("1 - Sedentários (pouco ou nenhum exercício);");
+		 * System.out.
+		 * println("2 - Levemente ativo (exercício leve 1 a 3 dias por semana);");
+		 * System.out.
+		 * println("3 - Moderadamente ativo (exercício moderado, faz esportes 3 a 5 dias por semana);"
+		 * ); System.out.
+		 * println("4 - Altamente ativo (exercício pesado de 5 a 6 dias por semana);");
+		 * System.out.
+		 * println("5 - Extremamente ativo (exercício pesado diariamente e até 2 vezes por dia)"
+		 * ); System.out.println(); System.out.print("Escolha um numero: "); numero =
+		 * sc.nextInt(); } if (genero[i] == 'f') { if (numero == 1) { fator2 = tbmmulher
+		 * * 1.2; } else if (numero == 2) { fator2 = tbmmulher * 1.375; } else if
+		 * (numero == 3) { fator2 = tbmmulher * 1.55; } else if (numero == 4) { fator2 =
+		 * tbmmulher * 1.725; } else if (numero == 5) { fator2 = tbmmulher * 1.9;
+		 * 
+		 * } System.out.printf("Taxa de metabolismo Basal de %s: %.2f Kcal%n", nome[i],
+		 * fator2); } } System.out.println();
+		 */
+		System.out.println();
+		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm ").withZone(ZoneId.systemDefault());
+		// Quando for instanciar uma data com "INSTANT" utiliza - se
+		// ".withZone(ZoneId.systemDefault()"
+		Instant hora = Instant.now();
+		System.out.println("Data da Consulta: " + formato.format(hora));
 
-			
-		
 		sc.close();
 	}
 }

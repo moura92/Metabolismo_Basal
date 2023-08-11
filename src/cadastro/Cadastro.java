@@ -29,6 +29,7 @@ public class Cadastro {
 			int quantidade = sc.nextInt();
 
 			for (int i = 0; i < quantidade; i++) {
+				Calculo.limparTela();
 				System.out.printf("Digite o nome da %dª pessoa: ", i + 1);
 				String nome = sc.next();
 				System.out.print("Digite o Genero ( m / f ): ");
@@ -40,7 +41,7 @@ public class Cadastro {
 				System.out.print("Digite a idade: ");
 				Integer idade = sc.nextInt();
 				System.out.println();
-
+			
 				if (genero == 'm') {
 					System.out.println(new Calculo().toString1());
 					System.out.print("Escolha um numero: ");
@@ -57,6 +58,7 @@ public class Cadastro {
 				}
 			}
 
+			Calculo.limparTela();
 			System.out.println("Resultado(s):");
 			for (Calculo x : lista) {
 				System.out.println(x.toString());

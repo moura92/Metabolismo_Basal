@@ -7,11 +7,11 @@ public class Calculo {
 	private Integer peso;
 	private Double altura;
 	private Integer idade;
-	
-		public Calculo() {
+
+	public Calculo() {
 		super();
 	}
-	
+
 	public Calculo(String nome, char genero, Integer peso, Double altura, Integer idade) {
 		super();
 		this.nome = nome;
@@ -20,7 +20,7 @@ public class Calculo {
 		this.altura = altura;
 		this.idade = idade;
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -62,7 +62,6 @@ public class Calculo {
 	}
 
 	public Double total() {
-		
 		return null;
 	}
 
@@ -74,10 +73,12 @@ public class Calculo {
 				+ "5 - Extremamente ativo (exercício pesado diariamente e até 2 vezes por dia)";
 	}
 
+	public static void limparTela() { // metodo para limpar o tabuleiro anterior.
+		System.out.print("\033[H\033[2J");
+		System.out.flush();
+	}
+
 	public String toString() {
-		return "Nome " 
-				+ nome + " - " 
-				+ String.format("%.2f", total()) 
-				+ " Kcal";
+		return "Nome " + nome + " - " + String.format("%.2f", total()) + " Kcal";
 	}
 }

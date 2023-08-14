@@ -79,6 +79,9 @@ public class Calculo {
 	}
 
 	public String toString() {
-		return "Nome " + nome + " - " + String.format("%.2f", total()) + " Kcal";
+		return "Nome " 
+				+ nome + " - " 
+				+ String.format("%.2f", total()) 
+				+ " Kcal";
 	}
 }

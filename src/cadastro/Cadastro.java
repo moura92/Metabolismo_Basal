@@ -31,9 +31,14 @@ public class Cadastro {
 			for (int i = 0; i < quantidade; i++) {
 				Calculo.limparTela();
 				System.out.printf("Digite o nome da %dª pessoa: ", i + 1);
-				String nome = sc.next();
-				System.out.print("Digite o Genero ( m / f ): ");
-				char genero = sc.next().charAt(0);
+				String nome = sc.next().toUpperCase();
+				System.out.print("Digite o Genero ( M / F ): ");
+				char genero = sc.next().toUpperCase().charAt(0);
+				while(genero != 'M' && genero != 'F') {
+					System.out.println("Inválido! Digite a letra correta.");
+					System.out.print("Digite o Genero ( M / F ): ");
+					genero = sc.next().toUpperCase().charAt(0);
+				}
 				System.out.print("Digite o peso (Kg): ");
 				Integer peso = sc.nextInt();
 				System.out.print("Digite a altura (cm): ");
@@ -42,14 +47,14 @@ public class Cadastro {
 				Integer idade = sc.nextInt();
 				System.out.println();
 			
-				if (genero == 'm') {
+				if (genero == 'M') {
 					System.out.println(new Calculo().toString1());
 					System.out.print("Escolha um numero: ");
 					Double calculohomem = sc.nextDouble();
 					System.out.println();
 					Calculo calculo = new Homem(nome, genero, peso, altura, idade, calculohomem);
 					lista.add(calculo);
-				} else if (genero == 'f') {
+				} else if (genero == 'F') {
 					System.out.println(new Calculo().toString1());
 					System.out.print("Ecolha um numero: ");
 					Double calculomulher = sc.nextDouble();
